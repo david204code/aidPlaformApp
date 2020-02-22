@@ -5,7 +5,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <form>
-        
+        Hello from SignIn
       </form>
     )
   }

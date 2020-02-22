@@ -1,5 +1,6 @@
 import React from 'react'
 import SignUp from '../components/forms/signUp'
+import SignIn from '../components/forms/signIn'
 
 class App extends React.Component {
   render () {
@@ -10,6 +11,7 @@ class App extends React.Component {
         </button>
         <p class="display-1">This is the App.js</p> */}
         <SignUp />
+        <SignIn />
       </div>
     )
   }
