@@ -1,5 +1,6 @@
 import React from 'react';
 import "./signUp.css";
+import axios from 'axios';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -24,7 +25,19 @@ class SignUp extends React.Component {
   }
   
   handleSubmit(event) {
-    console.log("form submitted");
+    axios.post("http://localhost:3000/users", {
+      user: {
+        email: this.state.email,
+        password: this.state.password,
+        password_confirmation: this.state.password_confirmation
+      }
+    },
+    { withCredentials: true } 
+    ).then(response => {
+      console.log("registration  respond", response);
+    }).catch(error => {
+      console.log("registration error", error);
+    });
     event.preventDefault();
   }
 
