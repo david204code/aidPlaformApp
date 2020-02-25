@@ -10,7 +10,7 @@ class App extends React.Component {
           Tooltip on top
         </button>
         <p class="display-1">This is the App.js</p> */}
-        <SignUp />
+        {/* <SignUp /> */}
         <SignIn />
       </div>
     )
