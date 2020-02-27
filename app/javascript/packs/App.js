@@ -1,6 +1,8 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import SignUp from '../components/forms/signUp'
 import SignIn from '../components/forms/signIn'
+
 
 class App extends React.Component {
   render () {
@@ -10,8 +12,10 @@ class App extends React.Component {
           Tooltip on top
         </button>
         <p class="display-1">This is the App.js</p> */}
-        {/* <SignUp /> */}
-        <SignIn />
+        <Switch>
+          <Route exact path ="/signin" component ={SignUp} />
+          <Route exact path ="/signup" component ={SignIn} />
+        </Switch>
       </div>
     )
   }
