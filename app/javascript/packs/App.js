@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../components/forms/signUp'
 import SignIn from '../components/forms/signIn'
+import Map from '../components/map'
 
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path ="/signin" component ={SignUp} />
           <Route exact path ="/signup" component ={SignIn} />
+          <Route exact path ="/map" component ={Map} />
         </Switch>
       </div>
     )
