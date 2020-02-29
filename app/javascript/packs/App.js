@@ -14,8 +14,8 @@ class App extends React.Component {
         </button>
         <p class="display-1">This is the App.js</p> */}
         <Switch>
-          <Route exact path ="/signin" component ={SignUp} />
-          <Route exact path ="/signup" component ={SignIn} />
+          <Route exact path ="/signup" component ={SignUp} />
+          <Route exact path ="/signin" component ={SignIn} />
           <Route exact path ="/map" component ={Map} />
         </Switch>
       </div>
