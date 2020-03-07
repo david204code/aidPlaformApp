@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     delete :logout, to: "devise/users/session#logout" 
   end
 
-
   root 'pages#index'
   get 'pages/index'
 
