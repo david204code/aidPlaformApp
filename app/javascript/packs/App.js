@@ -7,20 +7,40 @@ import Home from '../components/Home';
 import Dashboard from '../components/Dashboard';
 
 class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state ={
+      loggedInStatus: "Not_Logged_In",
+      user: {}
+    }
+  }
+
+
   render () {
     return (
       <div>
-        {/* <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-          Tooltip on top
-        </button>
-        <p class="display-1">This is the App.js</p> */}
         <BrowserRouter>
           <Switch>
             <Route exact path ="/signup" component ={SignUp} />
             <Route exact path ="/signin" component ={SignIn} />
             <Route exact path ="/map" component ={Map} />
-            <Route exact path ="/home" component ={Home} />
-            <Route exact path ="/dashboard" component ={Dashboard} />
+            <Route
+              exact path ="/"
+              render ={props => (
+                <Home {...props}
+                loggedInStatus ={this.state.loggedInStatus} />
+              )}
+            />
+            {/* <Route exact path ="/home" component ={Home} /> */}
+            <Route 
+              exact path ="/dashboard" 
+              render ={props => (
+                <Dashboard {...props}
+                loggedInstatus ={this.state.loggedInStatus} />
+              )}
+            />
+            
           </Switch>
         </BrowserRouter>
       </div>
