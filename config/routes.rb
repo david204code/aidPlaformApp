@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   devise_scope :registrations do 
     post 'create', to: "devise/users/registrations#create"
+  end
+  
+  devise_scope :sessions do 
     get :logged_in, to: "devise/users/sessions#logged_in"
     delete :logout, to: "devise/users/session#logout" 
   end

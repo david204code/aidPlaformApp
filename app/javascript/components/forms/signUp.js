@@ -5,6 +5,7 @@ import axios from 'axios';
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = { 
       // firstName: '',
       // lastName: '',
@@ -32,9 +33,12 @@ class SignUp extends React.Component {
         password_confirmation: this.state.password_confirmation
       }
     },
+    
     { withCredentials: true } 
     ).then(response => {
-      console.log("registration  respond", response);
+      if (response.data.status === 'created') {
+        this.props.handleSuccessfulAuth(response.data)
+      }
     }).catch(error => {
       console.log("registration error", error);
     });

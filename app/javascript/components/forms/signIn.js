@@ -9,7 +9,7 @@ class SignIn extends React.Component {
       email: '',
       password: '',
       signInErrors: ""
-    };
+    }
 
     this.handleSubmit =this.handleSubmit.bind(this);
     this.handleChange =this.handleChange.bind(this);
@@ -18,7 +18,7 @@ class SignIn extends React.Component {
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
-    });
+    })
   }
 
   handleSubmit(event) {
@@ -29,8 +29,11 @@ class SignIn extends React.Component {
       }
     },
     { withCredentials: true }
-    ).then(response => {
-      console.log("respond from login", response);
+    )
+    .then(response => {
+      if (response.data.logged_in === true ) {
+        this.props.handleSuccessfulAuth(response.data);
+      }
     })
     .catch(error => {
       console.log("login error", error);
